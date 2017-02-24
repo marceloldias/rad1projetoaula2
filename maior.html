@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <style>
+        .btn {
+            display: block;
+            margin: 20px auto;
+        }
+        
+        input[type='number'] {
+            float: left;
+        }
+        
+        .t {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            float: left;
+            display: block;
+        }
+        
+        #areaDaMensagem {
+            text-align: center;
+        }
+        
+        #r {
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+            border: 1px solid #000;
+            margin: 20px 0;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            float: left;
+            display: block;
+        }
+        
+        .s {
+            float: left;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function maior() {
+            var a = Number(document.getElementById('n1').value);
+            var b = Number(document.getElementById('n2').value);
+            var c = Number(document.getElementById('n3').value);
+            var r = document.getElementById('r');
+            if (a > b && a > c) {
+                r.innerText = "O maior é: " + a;
+            } else if (b > a && b > c) {
+                r.innerText = "O maior é: " + b;
+            } else if (c > a && c > b) {
+                r.innerText = "O maior é: " + c;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="areaDaMensagem">
+        Informe o maior numero.
+    </div>
+    <div class="t">
+        <input type="number" value="" id="n1" placeholder="valor 1">
+        <input type="number" value="" id="n2" placeholder="valor 2">
+        <input type="number" value="" id="n3" placeholder="valor 3">
+    </div>
+    <div class="s" />
+    <input type="button" value="MAIOR" class="btn" onclick="maior()">
+    <div id="r"></div>
+</body>
+
+
+</html>
