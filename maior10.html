@@ -11,18 +11,14 @@
         function maior() {
             var r = document.getElementById('r');
             var array = new Array();
+            var aux = array[0];
             for (i = 0; i < 10; i++) {
-                array[i] = Number(document.getElementById("n" + (i + 1)).value);
-                if (i > 0) {
-                    if (array[i - 1] > array[i])
-                        var aux = array[i];
-                    array[i - 1] = array[i];
-                    array[i] = aux;
-                }
+                array[i] = Number(document.getElementById("n" + (i + 1)).value);                
+                    if (array[i] > array[aux]){                        
+                        aux = i;
+                    }
             }
-            r.innerText = "O maior é: " + array[9].value;
-
-
+            r.innerText = "O maior é: " + array[aux].value;
         }
     </script>
 
