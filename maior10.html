@@ -9,16 +9,19 @@
     </style>
     <script>
         function maior() {
-            var r = document.getElementById('r');
+
             var array = new Array();
-            var aux = array[0];
-            for (i = 0; i < 10; i++) {
-                array[i] = Number(document.getElementById("n" + (i + 1)).value);                
-                    if (array[i] > array[aux]){                        
-                        aux = i;
-                    }
+            var aux = Number(document.getElementById('n1').value);
+
+            for (i = 1; i < 10; i++) {
+                array[i] = Number(document.getElementById("n" + (i + 1)).value);
+                if (array[i] > aux) {
+                    aux = array[i];
+                }
             }
-            r.innerText = "O maior é: " + array[aux].value;
+            var r = document.getElementById('r');
+            r.innerText = "O maior é: " + aux;
+            console.log(array[8]);
         }
     </script>
 
