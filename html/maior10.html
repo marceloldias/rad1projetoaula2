@@ -9,22 +9,26 @@
     </style>
     <script>
         function maior() {
-            var r = document.getElementById('r');
+
             var array = new Array();
-            var aux = array[0];
-            for (i = 0; i < 10; i++) {
-                array[i] = Number(document.getElementById("n" + (i + 1)).value);                
-                    if (array[i] > array[aux]){                        
-                        aux = i;
-                    }
+            var aux = Number(document.getElementById('n1').value);
+
+            for (i = 1; i < 10; i++) {
+                array[i] = Number(document.getElementById("n" + (i + 1)).value);
+                if (array[i] > aux) {
+                    aux = array[i];
+                }
             }
-            r.innerText = "O maior é: " + array[aux].value;
+            var r = document.getElementById('r');
+            r.innerText = "O maior é: " + aux;
+           
         }
     </script>
 
 </head>
 
 <body>
+   
     <input type="number" value="" id="n1" placeholder="valor 1">
     <input type="number" value="" id="n2" placeholder="valor 2">
     <input type="number" value="" id="n3" placeholder="valor 3">
@@ -34,7 +38,8 @@
     <input type="number" value="" id="n7" placeholder="valor 7">
     <input type="number" value="" id="n8" placeholder="valor 8">
     <input type="number" value="" id="n9" placeholder="valor 9">
-    <input type="number" value="" id="n10" placeholder="valor 10"><br/>
+    <input type="number" value="" id="n10" placeholder="valor 10"><br/>  
+    <input type="button" value="MAIOR" onclick="maior()">
     <input type="button" value="MAIOR" onclick="maior()">
     <div id="r"></div>
 </body>

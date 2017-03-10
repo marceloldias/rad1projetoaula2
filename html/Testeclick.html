@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <style>
+        input {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function maior() {
+            var aux1 = Number(document.getElementById('nc').value);
+            var array = new Array();
+            var aux = Number(document.getElementById('n1').value);
+
+            for (i = 1; i < aux1; i++) {
+                array[i] = Number(document.getElementById("n" + (i + 1)).value);
+                if (array[i] > aux) {
+                    aux = array[i];
+                }
+            }
+            var r = document.getElementById('r');
+            r.innerText = "O maior é: " + aux;
+
+        }
+        function gerar() {
+            var aux1 = Number(document.getElementById('nc').value);
+            vetor = new Array();
+            
+                vetor[i] = '<input type="number" value="" id="n' + (i + 1) + '" placeholder="valor ' + (i + 1) + '">';
+            
+            
+            document.getElementById('gerar').innerHTML = vetor;
+        }
+    </script>
+
+</head>
+
+<body>
+    <!--<input type="number" value="" id="n1" placeholder="valor 1">
+    <input type="number" value="" id="n2" placeholder="valor 2">
+    <input type="number" value="" id="n3" placeholder="valor 3">
+    <input type="number" value="" id="n4" placeholder="valor 4">
+    <input type="number" value="" id="n5" placeholder="valor 5">
+    <input type="number" value="" id="n6" placeholder="valor 6">
+    <input type="number" value="" id="n7" placeholder="valor 7">
+    <input type="number" value="" id="n8" placeholder="valor 8">
+    <input type="number" value="" id="n9" placeholder="valor 9">
+    <input type="number" value="" id="n10" placeholder="valor 10"><br/>-->
+
+    <input type="number" value="" id="nc" placeholder="Informe o numero de campo"><br/>
+
+    <input type="Button" value="Gerar" id="botao" onclick="gerar()"><br/>
+
+    <div id="r"></div>
+    <div id="gerar"></div><br/>
+    
+    <input type="button" value="MAIOR" onclick="maior()"><br/>
+</body>
+
+
+</html>
