@@ -1,0 +1,68 @@
+<html>
+
+    <head>
+        
+    </head>
+
+    <body>
+        
+        <form  action="javascript:void(0);" method="POST" onsubmit="app.Add()">
+        <Input type="text" id="add-nome" placeholder="Novo usuario">
+        <input type="submit" value="Adicionar">
+
+        <p id="contador"></p>
+        <table>
+            <tr>
+                <th></th>
+            </tr>
+            <tbody id="usuarios"
+        </table>
+        <script>
+        //instancia de uma classe anonima
+            var app = new function() {
+                console.log("Instanciando app");   
+                this.el = document.getElementById("usuarios");
+                this.usuarios=['jão', 'Zé', 'Maria'];
+
+                this.contar = function(qtd){
+                    var el = document.getElementById("contador");
+                    var nome = "Usuario";
+
+                    if(qtd){
+                        if(qtd>1){
+                            nome = 'Usuarios';
+                        }
+                        el.innerHTML = qtd +' '+nome;
+                    }else{
+                        el.innerHTML = 'Sem '+nome;
+                    }
+                }
+                this.listartodos = function(){
+                    var dados = '';
+                    if(this.usuarios.length>0){
+                        for(i=0;i<this.usuarios.length;i++){
+                            dados +='<tr><td>'+ this.usuarios[i]+'</td></tr>';                           
+                            
+                        }
+                    }
+                    this.contar(this.usuarios.length);
+                    return this.el.innerHTML = dados;
+                }
+                this.add = function(){
+                    elnome = document.getElementById("add-nome");
+                    var usuario = elnome.value;
+
+                    if(usuario){
+                        this.usuarios.push(usuario.trim());
+                        el.value = '';
+                        this.listartodos();
+                    }
+                }
+            };
+
+            app.listartodos();
+ 
+        </script>
+    </body>
+
+</html>
